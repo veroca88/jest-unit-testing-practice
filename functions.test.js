@@ -38,11 +38,16 @@ test("Should be under 1600", () => {
   const load2 = 800;
   expect(load1 + load2).toBeLessThanOrEqual(1600);
 });
-// Regex
+// Regex not
 test("There is no numbers in word", () => {
   expect("Hello").not.toMatch(/^[0-9]*$/);
 });
-// Regex
+// Regex toMatch
 test("There are only numbers in the input", () => {
   expect("7868521478").toMatch(/^[0-9]*$/);
+});
+// Arrays toContain
+test("Admin should be in usernames", () => {
+  usernames = ["erick", "vero", "admin"];
+  expect(usernames).toContain("admin");
 });
