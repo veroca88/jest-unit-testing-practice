@@ -29,6 +29,20 @@ test("User should be Vero Donoso object", () => {
 // toBeLessThan
 test("Should be under 1600", () => {
   const load1 = 800;
-  const load2 = 700;
+  const load2 = 500;
   expect(load1 + load2).toBeLessThan(1600);
+});
+// toBeLessThanOrEqual
+test("Should be under 1600", () => {
+  const load1 = 800;
+  const load2 = 800;
+  expect(load1 + load2).toBeLessThanOrEqual(1600);
+});
+// Regex
+test("There is no numbers in word", () => {
+  expect("Hello").not.toMatch(/^[0-9]*$/);
+});
+// Regex
+test("There are only numbers in the input", () => {
+  expect("7868521478").toMatch(/^[0-9]*$/);
 });
