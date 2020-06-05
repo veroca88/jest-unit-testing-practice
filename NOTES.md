@@ -13,3 +13,11 @@ toBe is for primities types
 toEqual for objects and arrays
 
 When we are working with async data we have to be carefull with expect.assertions and return the function because if we miss those we are going to recieve true even it isn't.
+
+If we want to run our test as we're developing,
+In package.json add inside
+"scripts": {
+"test": "jest",
+"testwatch" : "jest --watchAll"
+}
+On terminal\$ npm run testwatch
