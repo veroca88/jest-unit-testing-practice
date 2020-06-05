@@ -1,4 +1,31 @@
 const functions = require("./functions");
+// Case1: We want to initialize our data base before each funtion and close it after each.
+
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// const initDatabase = () => console.log("Database initialized...");
+// const closeDatabase = () => console.log("Database closed...");
+
+// Case2: We want to initialize our data base before all of the test and once all of the test completed we run closeDatabase
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log("Database initialized Once...");
+// const closeDatabase = () => console.log("Database closed Once...");
+
+// Case3: Target certain tests
+const nameCheck = () => console.log("Checking Name...");
+
+describe("Checking Names", () => {
+  beforeEach(() => nameCheck());
+
+  test("User is Vero", () => {
+    const user = "Vero";
+    expect(user).toBe("Vero");
+  });
+});
+
 // toBe
 test("Add 2 + 2 to equal 4", () => {
   expect(functions.add(2, 2)).toBe(4);
